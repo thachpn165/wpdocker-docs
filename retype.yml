@@ -5,11 +5,11 @@ branding:
   title: WPDocker
   label: Docs 
 links:
-- text: Gettings Started
+- text: 🚀 Gettings Started
   link: https://wpdocker.vn/getting-started/
-- text: Github
+- text: 🧑‍💻 Github
   link: https://github.com/thachpn165/wp-docker
-- text: AZDIGI
+- text: ❤️ AZDIGI
   link: https://azdigi.com
 footer:
   copyright: "&copy; Copyright {{ year }}. Made with ❤️ from AZDIGI"
