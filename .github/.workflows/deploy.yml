@@ -1,35 +1,24 @@
-name: Deploy to GitHub Pages
-
+name: Publish Retype powered website to GitHub Pages
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
 
 jobs:
-  build:
+  publish:
+    name: Publish to retype branch
+
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
-      # Checkout the repository
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
-      # Set up Bashly
-      - name: Install Bashly
-        run: |
-          gem install bashly
+      - uses: retypeapp/action-build@latest
 
-      # Generate Bashly scripts
-      - name: Generate Bashly scripts
-        run: bashly generate
-
-      # Build the static site
-      - name: Build static site
-        run: bashly build
-
-      # Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: retypeapp/action-github-pages@latest
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          update-branch: true
