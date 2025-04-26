@@ -1,5 +1,6 @@
 ---
-label: Index
+label: Introduction
+title: WP Docker - Docker bash script for WordPress
 description: Welcome to WP Docker docs
 order: 500
 ---
